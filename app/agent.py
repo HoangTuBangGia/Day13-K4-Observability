@@ -8,7 +8,7 @@ from .mock_llm import FakeLLM
 from .mock_rag import retrieve
 from .pii import hash_user_id, summarize_text
 from .prompt_management import resolve_prompt
-from .tracing import get_langfuse_client, observe, tracing_enabled
+from .tracing import get_langfuse_client, observe_when_enabled, tracing_enabled
 
 
 @dataclass
@@ -26,7 +26,7 @@ class LabAgent:
         self.model = model
         self.llm = FakeLLM(model=model)
 
-    @observe(as_type="generation", capture_input=False, capture_output=False)
+    @observe_when_enabled(as_type="generation", capture_input=False, capture_output=False)
     def run(self, user_id: str, feature: str, session_id: str, message: str) -> AgentResult:
         started = time.perf_counter()
         docs = retrieve(message)
