@@ -2,10 +2,13 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm: Nguyễn Huy Hưng (cá nhân)
+- Tên nhóm: Nhóm 2
 - Repository URL: https://github.com/HoangTuBangGia/Day13-K4-Observability
 - Commit SHA cuối: Cập nhật theo `git rev-parse HEAD` khi nộp trên Codelabs.
-- Thành viên và vai trò: Nguyễn Huy Hưng — MSSV 2A202601204 — phụ trách toàn bộ Logging/PII, Tracing/Prompt Versioning, Dashboard/SLO/Alert, Incident/Report/Demo.
+- Thành viên và vai trò:
+  - Nguyễn Huy Hưng - MSSV 2A202601204 - Logging/PII, Tracing và Prompt Versioning.
+  - Lương Quỳnh Chi - MSSV 2A202601630 - Dashboard/SLO/Alerts, Incident Investigation, Audit Log và Report.
+  - Cả hai thành viên cùng kiểm thử, review evidence và chuẩn bị demo cuối.
 
 ## 2. Kết quả kỹ thuật
 
@@ -52,7 +55,10 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
-| Nguyễn Huy Hưng (2A202601204) | Toàn bộ bài lab | [e9da475](https://github.com/HoangTuBangGia/Day13-K4-Observability/commit/e9da475aa19b2f15c18d4dccc5901b3eef0376fb) và commit bonus audit kế tiếp | Logging, tracing, metrics, dashboard và điều tra incident |
+| Nguyễn Huy Hưng (2A202601204) | Hoàn thiện JSON logging, correlation ID, request metadata, PII redaction; cấu hình Langfuse; tạo prompt v1/v2, trace baseline/candidate và bằng chứng rollback; viết test cho logging/tracing. | [4417c0cf1b8aa8ac187b8ca438d863bcc7cda019](https://github.com/HoangTuBangGia/Day13-K4-Observability/commit/4417c0cf1b8aa8ac187b8ca438d863bcc7cda019) | Structured logging, context propagation, bảo vệ PII, trace/span và quản lý vòng đời prompt. |
+| Lương Quỳnh Chi (2A202601630) | Hoàn thiện dashboard 6 panel, SLO, alert và runbook; chạy baseline/challenge, điều tra `rag_slow` theo Metrics → Traces → Logs; hoàn thiện audit log, evidence và báo cáo incident. | Commit hoàn thiện report/audit và các commit liên quan trong repo nhóm | Percentile, SLO/alert, phân tích root cause, correlation evidence và auditability. |
+
+Phân công được cân bằng theo hai luồng kỹ thuật chính: Hưng phụ trách khả năng thu thập và truy xuất tín hiệu; Chi phụ trách trực quan hóa, vận hành và điều tra sự cố. Hai thành viên cùng chịu trách nhiệm kiểm thử và demo end-to-end.
 
 ## 8. Bonus — Audit log
 
