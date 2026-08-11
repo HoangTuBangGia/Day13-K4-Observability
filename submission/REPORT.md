@@ -4,7 +4,7 @@
 
 - Tên nhóm: Super Extraordinary X
 - Repository URL: https://github.com/HoangTuBangGia/Day13-K4-Observability
-- Commit SHA cuối: dd0e2b67af2056ea079fa2f99fc252b331cc18f8
+- Commit SHA cuối: 05869f18f5bd8d358b3f0c92a3c5dd9915d1d62a
 - Thành viên và vai trò:
   - Nguyễn Huy Hưng - MSSV 2A202601204 - Logging/PII, Tracing và Prompt Versioning.
   - Lương Quỳnh Chi - MSSV 2A202601630 - Dashboard/SLO/Alerts, Incident Investigation, Audit Log và Report.
