@@ -7,6 +7,7 @@ from fastapi.responses import JSONResponse
 from structlog.contextvars import bind_contextvars
 
 from .agent import LabAgent
+from .audit import record_incident_action
 from .incidents import disable, enable, status
 from .logging_config import configure_logging, get_logger
 from .metrics import record_error, snapshot
@@ -96,9 +97,16 @@ async def chat(request: Request, body: ChatRequest) -> ChatResponse:
 
 
 @app.post("/incidents/{name}/enable")
-async def enable_incident(name: str) -> JSONResponse:
+async def enable_incident(name: str, request: Request) -> JSONResponse:
     try:
         enable(name)
+        record_incident_action(
+            actor_id=request.headers.get("x-actor-id", "lab-operator"),
+            correlation_id=request.state.correlation_id,
+            action="enable",
+            incident=name,
+            outcome="success",
+        )
         log.warning("incident_enabled", service="control", payload={"name": name})
         return JSONResponse({"ok": True, "incidents": status()})
     except KeyError as exc:
@@ -106,9 +114,16 @@ async def enable_incident(name: str) -> JSONResponse:
 
 
 @app.post("/incidents/{name}/disable")
-async def disable_incident(name: str) -> JSONResponse:
+async def disable_incident(name: str, request: Request) -> JSONResponse:
     try:
         disable(name)
+        record_incident_action(
+            actor_id=request.headers.get("x-actor-id", "lab-operator"),
+            correlation_id=request.state.correlation_id,
+            action="disable",
+            incident=name,
+            outcome="success",
+        )
         log.warning("incident_disabled", service="control", payload={"name": name})
         return JSONResponse({"ok": True, "incidents": status()})
     except KeyError as exc:

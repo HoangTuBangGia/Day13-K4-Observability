@@ -4,7 +4,7 @@
 
 - Tên nhóm: Nguyễn Huy Hưng (cá nhân)
 - Repository URL: https://github.com/HoangTuBangGia/Day13-K4-Observability
-- Commit SHA cuối:
+- Commit SHA cuối: Cập nhật theo `git rev-parse HEAD` khi nộp trên Codelabs.
 - Thành viên và vai trò: Nguyễn Huy Hưng — MSSV 2A202601204 — phụ trách toàn bộ Logging/PII, Tracing/Prompt Versioning, Dashboard/SLO/Alert, Incident/Report/Demo.
 
 ## 2. Kết quả kỹ thuật
@@ -12,7 +12,7 @@
 - Điểm `validate_logs.py`: 100/100
 - Tổng số traces: Tối thiểu 20 trace executions từ hai đợt baseline và candidate (10 request mỗi đợt).
 - Số PII leak còn lại: 0
-- Link/đường dẫn dashboard:
+- Link/đường dẫn dashboard: `submission/evidence/dashboard-baseline.png` và `submission/evidence/dashboard-incident.png`; runtime local tại `http://127.0.0.1:8501`.
 
 ## 3. Logging và tracing
 
@@ -52,4 +52,11 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
-| Nguyễn Huy Hưng (2A202601204) | Toàn bộ bài lab | Sẽ cập nhật commit/PR trước khi nộp | Logging, tracing, metrics, dashboard và điều tra incident |
+| Nguyễn Huy Hưng (2A202601204) | Toàn bộ bài lab | [e9da475](https://github.com/HoangTuBangGia/Day13-K4-Observability/commit/e9da475aa19b2f15c18d4dccc5901b3eef0376fb) và commit bonus audit kế tiếp | Logging, tracing, metrics, dashboard và điều tra incident |
+
+## 8. Bonus — Audit log
+
+- Triển khai audit log append-only riêng tại `data/audit.jsonl` cho thao tác bật/tắt incident.
+- Actor ID được hash trước khi ghi; mỗi event có timestamp, correlation ID, action, target và outcome.
+- Source: `app/audit.py`; validator: `scripts/validate_audit.py`; hướng dẫn: `docs/AUDIT_LOG.md`.
+- Evidence validator: `submission/evidence/audit-validation.txt`.

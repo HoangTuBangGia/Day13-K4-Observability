@@ -1,0 +1,1 @@
+HỢP LỆ: 2 audit event; có enable/disable và đủ trường bắt buộc.
