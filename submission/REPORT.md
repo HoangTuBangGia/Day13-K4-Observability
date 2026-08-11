@@ -2,7 +2,7 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm: Nhóm 2
+- Tên nhóm: Super Extraordinary X
 - Repository URL: https://github.com/HoangTuBangGia/Day13-K4-Observability
 - Commit SHA cuối: dd0e2b67af2056ea079fa2f99fc252b331cc18f8
 - Thành viên và vai trò:
