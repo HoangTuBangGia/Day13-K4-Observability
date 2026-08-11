@@ -56,7 +56,7 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
 | Nguyễn Huy Hưng (2A202601204) | Hoàn thiện JSON logging, correlation ID, request metadata, PII redaction; cấu hình Langfuse; tạo prompt v1/v2, trace baseline/candidate và bằng chứng rollback; viết test cho logging/tracing. | [4417c0cf1b8aa8ac187b8ca438d863bcc7cda019](https://github.com/HoangTuBangGia/Day13-K4-Observability/commit/4417c0cf1b8aa8ac187b8ca438d863bcc7cda019) | Structured logging, context propagation, bảo vệ PII, trace/span và quản lý vòng đời prompt. |
-| Lương Quỳnh Chi (2A202601630) | Hoàn thiện dashboard 6 panel, SLO, alert và runbook; chạy baseline/challenge, điều tra `rag_slow` theo Metrics → Traces → Logs; hoàn thiện audit log, evidence và báo cáo incident. | [4417c0cf1b8aa8ac187b8ca438d863bcc7cda019](https://github.com/HoangTuBangGia/Day13-K4-Observability/commit/4417c0cf1b8aa8ac187b8ca438d863bcc7cda019) | Percentile, SLO/alert, phân tích root cause, correlation evidence và auditability. |
+| Lương Quỳnh Chi (2A202601630) | Hoàn thiện dashboard 6 panel, SLO, alert và runbook; chạy baseline/challenge, điều tra `rag_slow` theo Metrics → Traces → Logs; hoàn thiện audit log, evidence và báo cáo incident. | [dd0e2b67af2056ea079fa2f99fc252b331cc18f8](https://github.com/HoangTuBangGia/Day13-K4-Observability/commit/dd0e2b67af2056ea079fa2f99fc252b331cc18f8) | Percentile, SLO/alert, phân tích root cause, correlation evidence và auditability. |
 
 Phân công được cân bằng theo hai luồng kỹ thuật chính: Hưng phụ trách khả năng thu thập và truy xuất tín hiệu; Chi phụ trách trực quan hóa, vận hành và điều tra sự cố. Hai thành viên cùng chịu trách nhiệm kiểm thử và demo end-to-end.
 
